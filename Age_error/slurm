@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --ntasks=400
+#SBATCH --ntasks-per-node=48
+#SBATCH --threads-per-core=1
+#SBATCH --partition=allq
+#SBATCH --nodes=9
+#SBATCH -o job.%N.%j.out  # STDOUT
+#SBATCH -e job.%N.%j.err  # STDERR
+#SBATCH --job-name test
+
+module purge
+module load development
+module load dev2024
+module load Anaconda/2023.09/gplates
+
+echo $PYTHONPATH
+
+mpirun -np 400 python Optimised_APM.py
+
