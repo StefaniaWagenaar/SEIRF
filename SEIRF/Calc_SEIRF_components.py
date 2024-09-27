@@ -264,7 +264,7 @@ def run_calc(iteration,kimberlites, LIPs, rot_file_inputdir,rot_file_folder,
     
     if end_age>980:
         end_age=980
-        end_age = 50
+
     
     times = np.arange(window,end_age,window)
     
